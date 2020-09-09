@@ -19,15 +19,20 @@ class Ground {
         this.y = gy;
         this.width = gw;
         this.height = gh;
-        this.color = color;
+      //  this.color = color;
+        this.r = r;
+        this.g = g;
+        this.b = b;
     }
 
     fillGround() {
+        fill(this.r, this.g, this.b);
         rect(this.x, this.y, this.width, this.height);
     }
     refill() {
+        this.b = this.b + 17;
         console.log("Blue");
-        fill(this.color);
+        
     }
 }
 
