@@ -31,7 +31,7 @@ class Ground {
     }
     refill() {
         this.b = this.b + 17;
-        console.log("Blue");
+        //console.log("Blue");
         
     }
 }
@@ -41,11 +41,12 @@ var r = 0;
 var g = 0; 
 var b = 0;
 var ground = new Ground(0, 280, 400, 20, [r, g, b]);
+var count = 0;
 
 function setup() {
     //console.log("Setup");
     createCanvas(400, 300);
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 150; i++) {
         var rx = 1 + Math.random() * 399
         var drip = new Drop(rx, 10, 10, [145, 185, 255]);
         rain.push(drip);
@@ -61,11 +62,15 @@ function draw() {
         var currentDrop = rain[i];
         currentDrop.update();
         var touchGround = hitGround(currentDrop.x, currentDrop.y, ground.x, ground.y, ground.width, ground.height);
-        if (touchGround) {
-            b = b + 17;
+        if(touchGround){
+            count++;
             rain.splice(i,1);
+            console.log(count);
+        }
+        if ((touchGround) && (count % 10 == 0)) {
+            b = b + 17;   
             ground.refill();
-            console.log(touchGround);
+            //console.log(touchGround);
             console.log(b);
         }
         
