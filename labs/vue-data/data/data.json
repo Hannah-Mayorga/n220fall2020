@@ -1,0 +1,8 @@
+{
+    "name": "My Hero Funko Pops",
+    "total": 32,
+    "pops": [
+        "Deku", "Katsuki", "Ochaco", "Tsuyu", "Todoroki",
+        "Dabi", "Toga", "Tenya"
+    ]
+}
